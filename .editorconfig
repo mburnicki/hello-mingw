@@ -14,9 +14,12 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
-[{M,m}akefile*]
-indent_style = tab
-indent_size = 4
-
+# Trailing spaces matter for markdown files
 [*.md]
 trim_trailing_whitespace = false
+max_line_length = off
+
+# Tabs matter for makefiles and .gitmodules
+[{makefile*,Makefile*,*.mk,*.mak,*.makefile,*.Makefile,GNUmakefile,BSDmakefile,Makevars*,*.gitmodules}]
+indent_style = tab
+indent_size = 4
